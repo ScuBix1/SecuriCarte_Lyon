@@ -1,0 +1,8 @@
+@import "tailwindcss";
+:root{
+    --color-number: #000000;
+    --hover-color-number: #00ff00;
+    --color-arrondissement: #e7caad;
+    --hover-color-arrondissement: #ff0000;
+    --color-fleuve: #2b7fff;
+}
