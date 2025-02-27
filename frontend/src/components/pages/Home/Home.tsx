@@ -6,14 +6,14 @@ const Home = () => {
   return (
     <div className="flex flex-col justify-center items-center gap-y-4">
       <h1 className="text-3xl">Les Cris de Lyon</h1>
-      <div className="flex flex-col justify-center items-center gap-y">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-y">
         <MapLyon
           width={500}
           height={500}
-          fillColorNumber="fill-[var(--color-number)]"
-          fillColorArrondissement="fill-[var(--color-arrondissement)] cursor-pointer"
-          fillColorArrondissementHover="hover:fill-[var(--hover-color-arrondissement)] hover:[.number]:fill-blue-500"
-          fillColorFleuve="fill-[var(--color-fleuve)]"
+          fillColorNumber="fill-[#000000]"
+          fillColorArrondissement="fill-[#DFCDC5] cursor-pointer number-hover:fill-red-400"
+          fillColorArrondissementHover="hover:fill-[#BDEE63]"
+          fillColorFleuve="fill-[#3E63DD]"
         />
         <List
           content={

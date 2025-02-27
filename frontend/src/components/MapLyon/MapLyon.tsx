@@ -29,7 +29,7 @@ const MapLyon = (props: MapLyonProps) => {
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={`${fillColorArrondissement} ${fillColorArrondissementHover} group`}
+        className={`${fillColorArrondissement} ${fillColorArrondissementHover} `}
         d="M 580.00,608.00
             C 580.00,608.00 568.00,576.00 568.00,576.00
                 568.00,576.00 544.00,554.00 544.00,554.00
@@ -52,7 +52,7 @@ const MapLyon = (props: MapLyonProps) => {
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={`${fillColorArrondissement} ${fillColorArrondissementHover} group`}
+        className={`${fillColorArrondissement} ${fillColorArrondissementHover} `}
         d="M 631.00,606.00
             C 631.00,606.00 579.00,608.00 579.00,608.00
                 579.00,608.00 568.00,674.00 568.00,674.00
@@ -83,7 +83,7 @@ const MapLyon = (props: MapLyonProps) => {
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={`${fillColorArrondissement} ${fillColorArrondissementHover} group`}
+        className={`${fillColorArrondissement} ${fillColorArrondissementHover} `}
         d="M 669.00,621.00
             C 669.00,621.00 925.00,608.00 925.00,608.00
                 925.00,608.00 948.00,648.00 948.00,648.00
@@ -107,7 +107,7 @@ const MapLyon = (props: MapLyonProps) => {
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={`${fillColorArrondissement} ${fillColorArrondissementHover} group`}
+        className={`${fillColorArrondissement} ${fillColorArrondissementHover} `}
         d="M 456.00,296.00
             C 456.00,296.00 412.00,360.00 412.00,360.00
                 412.00,360.00 376.00,430.00 376.00,430.00
@@ -132,7 +132,7 @@ const MapLyon = (props: MapLyonProps) => {
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={`${fillColorArrondissement} ${fillColorArrondissementHover} group`}
+        className={`${fillColorArrondissement} ${fillColorArrondissementHover} `}
         d="M 155.00,621.00
             C 155.00,621.00 140.00,704.00 140.00,704.00
                 140.00,704.00 102.00,732.00 102.00,732.00
@@ -180,7 +180,7 @@ const MapLyon = (props: MapLyonProps) => {
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={`${fillColorArrondissement} ${fillColorArrondissementHover} group`}
+        className={`${fillColorArrondissement} ${fillColorArrondissementHover} `}
         d="M 668.00,622.00
             C 668.00,622.00 924.00,608.00 924.00,608.00
                 924.00,608.00 892.00,568.00 892.00,568.00
@@ -204,7 +204,7 @@ const MapLyon = (props: MapLyonProps) => {
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={`${fillColorArrondissement} ${fillColorArrondissementHover} group`}
+        className={`${fillColorArrondissement} ${fillColorArrondissementHover} `}
         d="M 650.00,1232.00
             C 650.00,1232.00 754.00,1208.00 754.00,1208.00
                 754.00,1208.00 743.00,1108.00 743.00,1108.00
@@ -237,7 +237,7 @@ const MapLyon = (props: MapLyonProps) => {
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={`${fillColorArrondissement} ${fillColorArrondissementHover} group`}
+        className={`${fillColorArrondissement} ${fillColorArrondissementHover} `}
         d="M 834.00,798.00
             C 834.00,798.00 834.00,860.00 834.00,860.00
                 834.00,860.00 826.00,906.00 826.00,906.00
@@ -266,7 +266,7 @@ const MapLyon = (props: MapLyonProps) => {
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={`${fillColorArrondissement} ${fillColorArrondissementHover} group`}
+        className={`${fillColorArrondissement} ${fillColorArrondissementHover}`}
         d="M 156.00,620.00
             C 156.00,620.00 196.00,570.00 196.00,570.00
                 196.00,570.00 202.00,490.00 202.00,490.00
@@ -449,7 +449,7 @@ const MapLyon = (props: MapLyonProps) => {
       <path
         stroke="black"
         strokeWidth="1"
-        className={fillColorNumber}
+        className={`${fillColorNumber} number`}
         d="M 568.00,518.00
            C 568.00,518.00 581.00,516.06 581.00,516.06
              581.00,516.06 592.00,516.06 592.00,516.06
@@ -471,7 +471,7 @@ const MapLyon = (props: MapLyonProps) => {
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={fillColorNumber}
+        className={`${fillColorNumber} number`}
         d="M 522.00,792.00
             C 522.01,789.44 521.67,785.54 523.60,783.60
                 525.08,782.11 528.89,781.68 531.00,781.14
@@ -490,7 +490,7 @@ const MapLyon = (props: MapLyonProps) => {
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={fillColorNumber}
+        className={`${fillColorNumber} number`}
         d="M 889.00,705.93
             C 896.67,703.61 910.55,702.37 918.00,705.93
                 929.80,711.40 927.76,723.20 916.00,729.00
@@ -511,7 +511,7 @@ const MapLyon = (props: MapLyonProps) => {
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={fillColorNumber}
+        className={`${fillColorNumber} number`}
         d="M 462.00,452.00
             C 462.00,452.00 462.51,443.00 462.51,443.00
                 462.51,443.00 476.33,421.00 476.33,421.00
@@ -537,7 +537,7 @@ const MapLyon = (props: MapLyonProps) => {
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={fillColorNumber}
+        className={`${fillColorNumber} number`}
         d="M 323.00,718.00
             C 323.00,718.00 357.00,718.00 357.00,718.00
                 357.00,718.00 355.26,725.01 355.26,725.01
@@ -558,7 +558,7 @@ const MapLyon = (props: MapLyonProps) => {
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={fillColorNumber}
+        className={`${fillColorNumber} number`}
         d="M 755.00,477.00
             C 760.56,475.83 764.10,473.69 770.00,474.05
                 780.33,474.69 786.00,480.80 786.00,491.00
@@ -582,7 +582,7 @@ const MapLyon = (props: MapLyonProps) => {
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={fillColorNumber}
+        className={`${fillColorNumber} number`}
         d="M 600.00,1026.00
             C 600.00,1026.00 640.00,1026.00 640.00,1026.00
                 639.96,1035.81 637.93,1037.34 634.21,1046.00
@@ -596,7 +596,7 @@ const MapLyon = (props: MapLyonProps) => {
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={fillColorNumber}
+        className={`${fillColorNumber} number`}
         d="M 948.00,993.00
             C 944.54,988.39 938.84,985.33 938.36,979.00
                 937.07,961.93 967.24,963.71 973.81,968.77
@@ -621,7 +621,7 @@ const MapLyon = (props: MapLyonProps) => {
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={fillColorNumber}
+        className={`${fillColorNumber} number`}
         d="M 307.00,501.00
             C 300.79,503.30 293.61,505.69 287.00,503.16
                 274.91,498.54 272.49,482.80 281.05,473.76
