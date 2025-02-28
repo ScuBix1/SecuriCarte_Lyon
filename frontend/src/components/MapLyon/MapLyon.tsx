@@ -1,20 +1,29 @@
+import { useState } from 'react';
+
 interface MapLyonProps {
+  className?: string;
   width: number;
   height: number;
   fillColorNumber?: string;
   fillColorArrondissement?: string;
   fillColorArrondissementHover?: string;
   fillColorFleuve?: string;
+  onMouseEnterArrondissement?: (id: string) => void;
+  onMouseLeaveArrondissement?: () => void;
 }
 
 const MapLyon = (props: MapLyonProps) => {
   const {
+    className,
     width,
     height,
     fillColorNumber,
     fillColorArrondissement,
     fillColorArrondissementHover,
     fillColorFleuve,
+    onMouseEnterArrondissement = () => {},
+    onMouseLeaveArrondissement = () => {}
+    
   } = props;
 
   return (
@@ -23,6 +32,7 @@ const MapLyon = (props: MapLyonProps) => {
       width={width}
       height={height}
       viewBox="0 0 1228 1398"
+      className={className}
     >
       <path
         id="arrondissement1"
@@ -46,6 +56,8 @@ const MapLyon = (props: MapLyonProps) => {
                 636.00,532.00 634.00,582.00 634.00,582.00
                 634.00,582.00 634.00,606.00 634.00,606.00
                 634.00,606.00 580.00,608.00 580.00,608.00 Z"
+                onMouseEnter={() => onMouseEnterArrondissement('arrondissement1')}
+                onMouseLeave={onMouseLeaveArrondissement}
       />
       <path
         id="arrondissement2"
@@ -77,6 +89,8 @@ const MapLyon = (props: MapLyonProps) => {
                 626.00,700.00 634.00,672.00 634.00,672.00
                 634.00,672.00 630.00,630.00 632.00,630.00
                 634.00,630.00 631.00,606.00 631.00,606.00 Z"
+                onMouseEnter={() => onMouseEnterArrondissement('arrondissement2')}
+                onMouseLeave={onMouseLeaveArrondissement}
       />
       <path
         id="arrondissement3"
@@ -101,6 +115,8 @@ const MapLyon = (props: MapLyonProps) => {
                 1008.00,874.00 656.00,722.00 656.00,722.00
                 656.00,722.00 664.00,692.00 664.00,692.00
                 664.00,692.00 669.00,621.00 669.00,621.00 Z"
+                onMouseEnter={() => onMouseEnterArrondissement('arrondissement3')}
+                onMouseLeave={onMouseLeaveArrondissement}
       />
       <path
         id="arrondissement4"
@@ -126,6 +142,8 @@ const MapLyon = (props: MapLyonProps) => {
                 550.00,362.00 536.00,374.00 536.00,374.00
                 536.00,374.00 494.00,362.00 494.00,362.00
                 494.00,362.00 456.00,296.00 456.00,296.00 Z"
+                onMouseEnter={() => onMouseEnterArrondissement('arrondissement4')}
+                onMouseLeave={onMouseLeaveArrondissement}
       />
       <path
         id="arrondissement5"
@@ -174,6 +192,8 @@ const MapLyon = (props: MapLyonProps) => {
                 295.00,643.00 260.00,635.00 260.00,635.00
                 260.00,635.00 213.00,626.00 213.00,626.00
                 213.00,626.00 155.00,621.00 155.00,621.00 Z"
+                onMouseEnter={() => onMouseEnterArrondissement('arrondissement5')}
+                onMouseLeave={onMouseLeaveArrondissement}
       />
       <path
         id="arrondissement6"
@@ -198,6 +218,8 @@ const MapLyon = (props: MapLyonProps) => {
                 674.00,428.00 670.00,482.00 670.00,482.00
                 670.00,482.00 672.00,560.00 672.00,560.00
                 672.00,560.00 668.00,622.00 668.00,622.00 Z"
+                onMouseEnter={() => onMouseEnterArrondissement('arrondissement6')}
+                onMouseLeave={onMouseLeaveArrondissement}
       />
       <path
         id="arrondissement7"
@@ -231,6 +253,8 @@ const MapLyon = (props: MapLyonProps) => {
                 664.00,1346.00 662.00,1306.00 662.00,1306.00
                 662.00,1306.00 654.00,1266.00 654.00,1266.00
                 654.00,1266.00 650.00,1232.00 650.00,1232.00 Z"
+                onMouseEnter={() => onMouseEnterArrondissement('arrondissement7')}
+                onMouseLeave={onMouseLeaveArrondissement}
       />
       <path
         id="arrondissement8"
@@ -260,6 +284,8 @@ const MapLyon = (props: MapLyonProps) => {
                 1078.00,895.00 1012.00,895.00 1012.00,895.00
                 1012.00,895.00 1008.00,873.00 1008.00,873.00
                 1008.00,873.00 834.00,798.00 834.00,798.00 Z"
+                onMouseEnter={() => onMouseEnterArrondissement('arrondissement8')}
+                onMouseLeave={onMouseLeaveArrondissement}
       />
       <path
         id="arrondissement9"
@@ -321,6 +347,8 @@ const MapLyon = (props: MapLyonProps) => {
                 262.00,636.00 220.00,628.00 220.00,628.00
                 220.00,628.00 182.00,624.00 182.00,624.00
                 182.00,624.00 156.00,620.00 156.00,620.00 Z"
+                onMouseEnter={() => onMouseEnterArrondissement('arrondissement9')}
+                onMouseLeave={onMouseLeaveArrondissement}
       />
       <path
         id="fleuve"
@@ -466,6 +494,8 @@ const MapLyon = (props: MapLyonProps) => {
              581.96,529.87 582.03,527.23 580.40,525.80
              577.41,522.61 571.53,525.25 568.00,525.80
              568.00,525.80 568.00,518.00 568.00,518.00 Z"
+             onMouseEnter={() => onMouseEnterArrondissement('arrondissement1')}
+                onMouseLeave={onMouseLeaveArrondissement}
       />
       <path
         fill="none"
@@ -485,6 +515,8 @@ const MapLyon = (props: MapLyonProps) => {
                 547.53,801.39 547.90,799.75 547.89,798.00
                 547.85,788.65 538.43,786.75 531.00,788.46
                 528.40,789.06 524.50,790.87 522.00,792.00 Z"
+                onMouseEnter={() => onMouseEnterArrondissement('arrondissement2')}
+                onMouseLeave={onMouseLeaveArrondissement}
       />
       <path
         fill="none"
@@ -506,6 +538,8 @@ const MapLyon = (props: MapLyonProps) => {
                 914.66,723.20 915.79,716.35 908.91,712.17
                 901.94,708.29 896.28,711.91 889.00,712.17
                 889.00,712.17 889.00,705.93 889.00,705.93 Z"
+                onMouseEnter={() => onMouseEnterArrondissement('arrondissement3')}
+                onMouseLeave={onMouseLeaveArrondissement}
       />
       <path
         fill="none"
@@ -532,6 +566,8 @@ const MapLyon = (props: MapLyonProps) => {
                 472.07,447.29 484.93,446.75 486.98,443.69
                 488.21,441.84 488.00,438.19 488.00,436.00
                 488.01,430.09 488.62,423.70 487.00,418.00 Z"
+                onMouseEnter={() => onMouseEnterArrondissement('arrondissement4')}
+                onMouseLeave={onMouseLeaveArrondissement}
       />
       <path
         fill="none"
@@ -553,6 +589,8 @@ const MapLyon = (props: MapLyonProps) => {
                 350.14,762.79 352.22,751.13 343.81,745.90
                 337.75,741.96 329.37,744.64 323.00,745.90
                 323.00,745.90 323.00,718.00 323.00,718.00 Z"
+                onMouseEnter={() => onMouseEnterArrondissement('arrondissement5')}
+                onMouseLeave={onMouseLeaveArrondissement}
       />
       <path
         fill="none"
@@ -577,6 +615,8 @@ const MapLyon = (props: MapLyonProps) => {
             M 764.00,480.49
             C 750.65,485.21 754.91,506.38 768.00,503.72
                 779.08,501.47 778.32,479.13 764.00,480.49 Z"
+                onMouseEnter={() => onMouseEnterArrondissement('arrondissement6')}
+                onMouseLeave={onMouseLeaveArrondissement}
       />
       <path
         fill="none"
@@ -591,6 +631,8 @@ const MapLyon = (props: MapLyonProps) => {
                 607.00,1082.00 627.00,1035.00 627.00,1035.00
                 627.00,1035.00 600.00,1034.00 600.00,1034.00
                 600.00,1034.00 600.00,1026.00 600.00,1026.00 Z"
+                onMouseEnter={() => onMouseEnterArrondissement('arrondissement7')}
+                onMouseLeave={onMouseLeaveArrondissement}
       />
       <path
         fill="none"
@@ -616,6 +658,8 @@ const MapLyon = (props: MapLyonProps) => {
             C 942.56,998.32 946.56,1017.41 960.00,1015.86
                 970.48,1014.66 968.64,1001.04 966.40,998.30
                 964.12,995.50 960.30,995.25 957.00,995.34 Z"
+                onMouseEnter={() => onMouseEnterArrondissement('arrondissement8')}
+                onMouseLeave={onMouseLeaveArrondissement}
       />
       <path
         fill="none"
@@ -635,6 +679,8 @@ const MapLyon = (props: MapLyonProps) => {
             C 292.14,475.39 291.28,475.55 289.89,477.34
                 285.40,483.12 287.45,502.03 300.00,497.40
                 308.90,494.12 309.74,471.87 294.04,474.51 Z"
+                onMouseEnter={() => onMouseEnterArrondissement('arrondissement9')}
+                onMouseLeave={onMouseLeaveArrondissement}
       />
     </svg>
   );
