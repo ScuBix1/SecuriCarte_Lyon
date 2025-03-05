@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import ListItem from './ListItem/ListItem';
 
 interface ListProps {
   className?: string;

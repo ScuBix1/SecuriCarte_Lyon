@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import List from '../../List/List';
-import ListItem from '../../List/ListItem/ListItem';
+import ListItem, { textColors } from '../../List/ListItem/ListItem';
 import MapLyon from '../../MapLyon/MapLyon';
 import cn from 'classnames';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const [arrondissementHovered, setArrondissementHovered] = useState<
@@ -19,6 +21,7 @@ const Home = () => {
     '8eme arrondissement',
     '9eme arrondissement',
   ];
+  const navigate = useNavigate();
 
   const handleMouseEnter = (arrondissement: string) => {
     setArrondissementHovered(arrondissement);
@@ -26,6 +29,10 @@ const Home = () => {
 
   const handleMouseLeave = () => {
     setArrondissementHovered(undefined);
+  };
+
+  const handleClickArrondissement = (arrondissement: string) => {
+    navigate(`/${arrondissement}`);
   };
 
   useEffect(() => {
@@ -41,22 +48,26 @@ const Home = () => {
           width={500}
           height={500}
           fillColorNumber="fill-[#000000]"
-          fillColorArrondissement="fill-[#DFCDC5] cursor-pointer"
-          fillColorArrondissementHover="hover:fill-[#BDEE63]"
           fillColorFleuve="fill-[#3E63DD]"
           onMouseEnterArrondissement={handleMouseEnter}
           onMouseLeaveArrondissement={handleMouseLeave}
+          onClickArrondissement={handleClickArrondissement}
+          arrondissementHovered={arrondissementHovered}
         />
         <List
           className="flex flex-col justify-center items-center basis-1/2 "
           content={arrondissements.map((arr, index) => (
             <ListItem
-              key={arr}
-              content={arr}
-              className={cn({
-                'text-[#00ff00]':
+              key={`arrondissement${index + 1}`}
+              content={<Link to={`/arrondissement${index + 1}`}>{arr}</Link>}
+              className={cn(`hover:${[textColors.hovered]}`, {
+                [textColors.hovered]:
                   arrondissementHovered === `arrondissement${index + 1}`,
+                [textColors.default]: !(arrondissementHovered === `arrondissement${index + 1}`),
               })}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              arrondissementHovered={`arrondissement${index + 1}`}
             />
           ))}
         />

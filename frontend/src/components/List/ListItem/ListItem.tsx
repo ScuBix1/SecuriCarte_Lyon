@@ -1,14 +1,37 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
+import cn from 'classnames';
 
-interface ListItemProps{
-    className?: string;
-    content?: ReactNode | string;
+export const textColors = {
+    default: 'text-black cursor-pointer',
+    hovered: 'text-[#BDEE63] cursor-pointer',
 }
 
-const ListItem = (props: ListItemProps)=>{
-    const {className, content} = props;
-
-    return(<li className={className}>{content}</li>)
+interface ListItemProps {
+  className?: string;
+  content?: ReactNode | string;
+  onMouseEnter?: (id: string) => void;
+  onMouseLeave?: () => void;
+  arrondissementHovered?: string;
 }
+
+const ListItem = (props: ListItemProps) => {
+  const {
+    className,
+    content,
+    onMouseEnter = () => {},
+    onMouseLeave = () => {},
+    arrondissementHovered = '',
+  } = props;
+
+  return (
+    <li
+      className={className}
+      onMouseEnter={() => onMouseEnter && onMouseEnter(arrondissementHovered)}
+      onMouseLeave={() => onMouseLeave && onMouseLeave()}
+    >
+      {content}
+    </li>
+  );
+};
 
 export default ListItem;
