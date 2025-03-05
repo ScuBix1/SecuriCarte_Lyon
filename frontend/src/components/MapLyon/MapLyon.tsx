@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import cn from 'classnames';
 
 interface MapLyonProps {
   className?: string;
@@ -8,9 +8,16 @@ interface MapLyonProps {
   fillColorArrondissement?: string;
   fillColorArrondissementHover?: string;
   fillColorFleuve?: string;
+  arrondissementHovered?: string;
   onMouseEnterArrondissement?: (id: string) => void;
   onMouseLeaveArrondissement?: () => void;
+  onClickArrondissement?: (id: string) => void;
 }
+
+export const arrondissementColors = {
+  default: 'fill-[#DFCDC5] cursor-pointer',
+  hovered: 'fill-[#BDEE63] cursor-pointer',
+};
 
 const MapLyon = (props: MapLyonProps) => {
   const {
@@ -18,13 +25,13 @@ const MapLyon = (props: MapLyonProps) => {
     width,
     height,
     fillColorNumber,
-    fillColorArrondissement,
-    fillColorArrondissementHover,
     fillColorFleuve,
+    arrondissementHovered,
     onMouseEnterArrondissement = () => {},
-    onMouseLeaveArrondissement = () => {}
-    
+    onMouseLeaveArrondissement = () => {},
+    onClickArrondissement = () => {},
   } = props;
+  console.log('MapLyonProps', arrondissementHovered === 'arrondissement1');
 
   return (
     <svg
@@ -39,7 +46,10 @@ const MapLyon = (props: MapLyonProps) => {
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={`${fillColorArrondissement} ${fillColorArrondissementHover} `}
+        className={cn({
+          [arrondissementColors.hovered]: arrondissementHovered === 'arrondissement1',
+          [arrondissementColors.default]: arrondissementHovered !== 'arrondissement1',
+        })}
         d="M 580.00,608.00
             C 580.00,608.00 568.00,576.00 568.00,576.00
                 568.00,576.00 544.00,554.00 544.00,554.00
@@ -56,15 +66,19 @@ const MapLyon = (props: MapLyonProps) => {
                 636.00,532.00 634.00,582.00 634.00,582.00
                 634.00,582.00 634.00,606.00 634.00,606.00
                 634.00,606.00 580.00,608.00 580.00,608.00 Z"
-                onMouseEnter={() => onMouseEnterArrondissement('arrondissement1')}
-                onMouseLeave={onMouseLeaveArrondissement}
+        onMouseEnter={() => onMouseEnterArrondissement('arrondissement1')}
+        onMouseLeave={onMouseLeaveArrondissement}
+        onClick={() => onClickArrondissement('arrondissement1')}
       />
       <path
         id="arrondissement2"
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={`${fillColorArrondissement} ${fillColorArrondissementHover} `}
+        className={cn({
+          [arrondissementColors.hovered]: arrondissementHovered === 'arrondissement2',
+          [arrondissementColors.default]: arrondissementHovered !== 'arrondissement2',
+        })}
         d="M 631.00,606.00
             C 631.00,606.00 579.00,608.00 579.00,608.00
                 579.00,608.00 568.00,674.00 568.00,674.00
@@ -89,15 +103,19 @@ const MapLyon = (props: MapLyonProps) => {
                 626.00,700.00 634.00,672.00 634.00,672.00
                 634.00,672.00 630.00,630.00 632.00,630.00
                 634.00,630.00 631.00,606.00 631.00,606.00 Z"
-                onMouseEnter={() => onMouseEnterArrondissement('arrondissement2')}
-                onMouseLeave={onMouseLeaveArrondissement}
+        onMouseEnter={() => onMouseEnterArrondissement('arrondissement2')}
+        onMouseLeave={onMouseLeaveArrondissement}
+        onClick={() => onClickArrondissement('arrondissement2')}
       />
       <path
         id="arrondissement3"
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={`${fillColorArrondissement} ${fillColorArrondissementHover} `}
+        className={cn({
+          [arrondissementColors.hovered]: arrondissementHovered === 'arrondissement3',
+          [arrondissementColors.default]: arrondissementHovered !== 'arrondissement3',
+        })}
         d="M 669.00,621.00
             C 669.00,621.00 925.00,608.00 925.00,608.00
                 925.00,608.00 948.00,648.00 948.00,648.00
@@ -115,15 +133,19 @@ const MapLyon = (props: MapLyonProps) => {
                 1008.00,874.00 656.00,722.00 656.00,722.00
                 656.00,722.00 664.00,692.00 664.00,692.00
                 664.00,692.00 669.00,621.00 669.00,621.00 Z"
-                onMouseEnter={() => onMouseEnterArrondissement('arrondissement3')}
-                onMouseLeave={onMouseLeaveArrondissement}
+        onMouseEnter={() => onMouseEnterArrondissement('arrondissement3')}
+        onMouseLeave={onMouseLeaveArrondissement}
+        onClick={() => onClickArrondissement('arrondissement3')}
       />
       <path
         id="arrondissement4"
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={`${fillColorArrondissement} ${fillColorArrondissementHover} `}
+        className={cn({
+          [arrondissementColors.hovered]: arrondissementHovered === 'arrondissement4',
+          [arrondissementColors.default]: arrondissementHovered !== 'arrondissement4',
+        })}
         d="M 456.00,296.00
             C 456.00,296.00 412.00,360.00 412.00,360.00
                 412.00,360.00 376.00,430.00 376.00,430.00
@@ -142,15 +164,19 @@ const MapLyon = (props: MapLyonProps) => {
                 550.00,362.00 536.00,374.00 536.00,374.00
                 536.00,374.00 494.00,362.00 494.00,362.00
                 494.00,362.00 456.00,296.00 456.00,296.00 Z"
-                onMouseEnter={() => onMouseEnterArrondissement('arrondissement4')}
-                onMouseLeave={onMouseLeaveArrondissement}
+        onMouseEnter={() => onMouseEnterArrondissement('arrondissement4')}
+        onMouseLeave={onMouseLeaveArrondissement}
+        onClick={() => onClickArrondissement('arrondissement4')}
       />
       <path
         id="arrondissement5"
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={`${fillColorArrondissement} ${fillColorArrondissementHover} `}
+        className={cn({
+          [arrondissementColors.hovered]: arrondissementHovered === 'arrondissement5',
+          [arrondissementColors.default]: arrondissementHovered !== 'arrondissement5',
+        })}
         d="M 155.00,621.00
             C 155.00,621.00 140.00,704.00 140.00,704.00
                 140.00,704.00 102.00,732.00 102.00,732.00
@@ -192,15 +218,19 @@ const MapLyon = (props: MapLyonProps) => {
                 295.00,643.00 260.00,635.00 260.00,635.00
                 260.00,635.00 213.00,626.00 213.00,626.00
                 213.00,626.00 155.00,621.00 155.00,621.00 Z"
-                onMouseEnter={() => onMouseEnterArrondissement('arrondissement5')}
-                onMouseLeave={onMouseLeaveArrondissement}
+        onMouseEnter={() => onMouseEnterArrondissement('arrondissement5')}
+        onMouseLeave={onMouseLeaveArrondissement}
+        onClick={() => onClickArrondissement('arrondissement5')}
       />
       <path
         id="arrondissement6"
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={`${fillColorArrondissement} ${fillColorArrondissementHover} `}
+        className={cn({
+          [arrondissementColors.hovered]: arrondissementHovered === 'arrondissement6',
+          [arrondissementColors.default]: arrondissementHovered !== 'arrondissement6',
+        })}
         d="M 668.00,622.00
             C 668.00,622.00 924.00,608.00 924.00,608.00
                 924.00,608.00 892.00,568.00 892.00,568.00
@@ -218,15 +248,19 @@ const MapLyon = (props: MapLyonProps) => {
                 674.00,428.00 670.00,482.00 670.00,482.00
                 670.00,482.00 672.00,560.00 672.00,560.00
                 672.00,560.00 668.00,622.00 668.00,622.00 Z"
-                onMouseEnter={() => onMouseEnterArrondissement('arrondissement6')}
-                onMouseLeave={onMouseLeaveArrondissement}
+        onMouseEnter={() => onMouseEnterArrondissement('arrondissement6')}
+        onMouseLeave={onMouseLeaveArrondissement}
+        onClick={() => onClickArrondissement('arrondissement6')}
       />
       <path
         id="arrondissement7"
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={`${fillColorArrondissement} ${fillColorArrondissementHover} `}
+        className={cn({
+          [arrondissementColors.hovered]: arrondissementHovered === 'arrondissement7',
+          [arrondissementColors.default]: arrondissementHovered !== 'arrondissement7',
+        })}
         d="M 650.00,1232.00
             C 650.00,1232.00 754.00,1208.00 754.00,1208.00
                 754.00,1208.00 743.00,1108.00 743.00,1108.00
@@ -253,15 +287,19 @@ const MapLyon = (props: MapLyonProps) => {
                 664.00,1346.00 662.00,1306.00 662.00,1306.00
                 662.00,1306.00 654.00,1266.00 654.00,1266.00
                 654.00,1266.00 650.00,1232.00 650.00,1232.00 Z"
-                onMouseEnter={() => onMouseEnterArrondissement('arrondissement7')}
-                onMouseLeave={onMouseLeaveArrondissement}
+        onMouseEnter={() => onMouseEnterArrondissement('arrondissement7')}
+        onMouseLeave={onMouseLeaveArrondissement}
+        onClick={() => onClickArrondissement('arrondissement7')}
       />
       <path
         id="arrondissement8"
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={`${fillColorArrondissement} ${fillColorArrondissementHover} `}
+        className={cn({
+          [arrondissementColors.hovered]: arrondissementHovered === 'arrondissement8',
+          [arrondissementColors.default]: arrondissementHovered !== 'arrondissement8',
+        })}
         d="M 834.00,798.00
             C 834.00,798.00 834.00,860.00 834.00,860.00
                 834.00,860.00 826.00,906.00 826.00,906.00
@@ -284,15 +322,19 @@ const MapLyon = (props: MapLyonProps) => {
                 1078.00,895.00 1012.00,895.00 1012.00,895.00
                 1012.00,895.00 1008.00,873.00 1008.00,873.00
                 1008.00,873.00 834.00,798.00 834.00,798.00 Z"
-                onMouseEnter={() => onMouseEnterArrondissement('arrondissement8')}
-                onMouseLeave={onMouseLeaveArrondissement}
+        onMouseEnter={() => onMouseEnterArrondissement('arrondissement8')}
+        onMouseLeave={onMouseLeaveArrondissement}
+        onClick={() => onClickArrondissement('arrondissement8')}
       />
       <path
         id="arrondissement9"
         fill="none"
         stroke="black"
         strokeWidth="1"
-        className={`${fillColorArrondissement} ${fillColorArrondissementHover}`}
+        className={cn({
+          [arrondissementColors.hovered]: arrondissementHovered === 'arrondissement9',
+          [arrondissementColors.default]: arrondissementHovered !== 'arrondissement9',
+        })}
         d="M 156.00,620.00
             C 156.00,620.00 196.00,570.00 196.00,570.00
                 196.00,570.00 202.00,490.00 202.00,490.00
@@ -347,8 +389,9 @@ const MapLyon = (props: MapLyonProps) => {
                 262.00,636.00 220.00,628.00 220.00,628.00
                 220.00,628.00 182.00,624.00 182.00,624.00
                 182.00,624.00 156.00,620.00 156.00,620.00 Z"
-                onMouseEnter={() => onMouseEnterArrondissement('arrondissement9')}
-                onMouseLeave={onMouseLeaveArrondissement}
+        onMouseEnter={() => onMouseEnterArrondissement('arrondissement9')}
+        onMouseLeave={onMouseLeaveArrondissement}
+        onClick={() => onClickArrondissement('arrondissement9')}
       />
       <path
         id="fleuve"
@@ -494,8 +537,9 @@ const MapLyon = (props: MapLyonProps) => {
              581.96,529.87 582.03,527.23 580.40,525.80
              577.41,522.61 571.53,525.25 568.00,525.80
              568.00,525.80 568.00,518.00 568.00,518.00 Z"
-             onMouseEnter={() => onMouseEnterArrondissement('arrondissement1')}
-                onMouseLeave={onMouseLeaveArrondissement}
+        onMouseEnter={() => onMouseEnterArrondissement('arrondissement1')}
+        onMouseLeave={onMouseLeaveArrondissement}
+        onClick={() => onClickArrondissement('arrondissement1')}
       />
       <path
         fill="none"
@@ -515,8 +559,9 @@ const MapLyon = (props: MapLyonProps) => {
                 547.53,801.39 547.90,799.75 547.89,798.00
                 547.85,788.65 538.43,786.75 531.00,788.46
                 528.40,789.06 524.50,790.87 522.00,792.00 Z"
-                onMouseEnter={() => onMouseEnterArrondissement('arrondissement2')}
-                onMouseLeave={onMouseLeaveArrondissement}
+        onMouseEnter={() => onMouseEnterArrondissement('arrondissement2')}
+        onMouseLeave={onMouseLeaveArrondissement}
+        onClick={() => onClickArrondissement('arrondissement2')}
       />
       <path
         fill="none"
@@ -538,8 +583,9 @@ const MapLyon = (props: MapLyonProps) => {
                 914.66,723.20 915.79,716.35 908.91,712.17
                 901.94,708.29 896.28,711.91 889.00,712.17
                 889.00,712.17 889.00,705.93 889.00,705.93 Z"
-                onMouseEnter={() => onMouseEnterArrondissement('arrondissement3')}
-                onMouseLeave={onMouseLeaveArrondissement}
+        onMouseEnter={() => onMouseEnterArrondissement('arrondissement3')}
+        onMouseLeave={onMouseLeaveArrondissement}
+        onClick={() => onClickArrondissement('arrondissement3')}
       />
       <path
         fill="none"
@@ -566,8 +612,9 @@ const MapLyon = (props: MapLyonProps) => {
                 472.07,447.29 484.93,446.75 486.98,443.69
                 488.21,441.84 488.00,438.19 488.00,436.00
                 488.01,430.09 488.62,423.70 487.00,418.00 Z"
-                onMouseEnter={() => onMouseEnterArrondissement('arrondissement4')}
-                onMouseLeave={onMouseLeaveArrondissement}
+        onMouseEnter={() => onMouseEnterArrondissement('arrondissement4')}
+        onMouseLeave={onMouseLeaveArrondissement}
+        onClick={() => onClickArrondissement('arrondissement4')}
       />
       <path
         fill="none"
@@ -589,8 +636,9 @@ const MapLyon = (props: MapLyonProps) => {
                 350.14,762.79 352.22,751.13 343.81,745.90
                 337.75,741.96 329.37,744.64 323.00,745.90
                 323.00,745.90 323.00,718.00 323.00,718.00 Z"
-                onMouseEnter={() => onMouseEnterArrondissement('arrondissement5')}
-                onMouseLeave={onMouseLeaveArrondissement}
+        onMouseEnter={() => onMouseEnterArrondissement('arrondissement5')}
+        onMouseLeave={onMouseLeaveArrondissement}
+        onClick={() => onClickArrondissement('arrondissement5')}
       />
       <path
         fill="none"
@@ -615,8 +663,9 @@ const MapLyon = (props: MapLyonProps) => {
             M 764.00,480.49
             C 750.65,485.21 754.91,506.38 768.00,503.72
                 779.08,501.47 778.32,479.13 764.00,480.49 Z"
-                onMouseEnter={() => onMouseEnterArrondissement('arrondissement6')}
-                onMouseLeave={onMouseLeaveArrondissement}
+        onMouseEnter={() => onMouseEnterArrondissement('arrondissement6')}
+        onMouseLeave={onMouseLeaveArrondissement}
+        onClick={() => onClickArrondissement('arrondissement6')}
       />
       <path
         fill="none"
@@ -631,8 +680,9 @@ const MapLyon = (props: MapLyonProps) => {
                 607.00,1082.00 627.00,1035.00 627.00,1035.00
                 627.00,1035.00 600.00,1034.00 600.00,1034.00
                 600.00,1034.00 600.00,1026.00 600.00,1026.00 Z"
-                onMouseEnter={() => onMouseEnterArrondissement('arrondissement7')}
-                onMouseLeave={onMouseLeaveArrondissement}
+        onMouseEnter={() => onMouseEnterArrondissement('arrondissement7')}
+        onMouseLeave={onMouseLeaveArrondissement}
+        onClick={() => onClickArrondissement('arrondissement7')}
       />
       <path
         fill="none"
@@ -658,8 +708,9 @@ const MapLyon = (props: MapLyonProps) => {
             C 942.56,998.32 946.56,1017.41 960.00,1015.86
                 970.48,1014.66 968.64,1001.04 966.40,998.30
                 964.12,995.50 960.30,995.25 957.00,995.34 Z"
-                onMouseEnter={() => onMouseEnterArrondissement('arrondissement8')}
-                onMouseLeave={onMouseLeaveArrondissement}
+        onMouseEnter={() => onMouseEnterArrondissement('arrondissement8')}
+        onMouseLeave={onMouseLeaveArrondissement}
+        onClick={() => onClickArrondissement('arrondissement8')}
       />
       <path
         fill="none"
@@ -679,8 +730,9 @@ const MapLyon = (props: MapLyonProps) => {
             C 292.14,475.39 291.28,475.55 289.89,477.34
                 285.40,483.12 287.45,502.03 300.00,497.40
                 308.90,494.12 309.74,471.87 294.04,474.51 Z"
-                onMouseEnter={() => onMouseEnterArrondissement('arrondissement9')}
-                onMouseLeave={onMouseLeaveArrondissement}
+        onMouseEnter={() => onMouseEnterArrondissement('arrondissement9')}
+        onMouseLeave={onMouseLeaveArrondissement}
+        onClick={() => onClickArrondissement('arrondissement9')}
       />
     </svg>
   );
